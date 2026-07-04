@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nathanlombarddev.github.io/vault-site/sitemap.xml
