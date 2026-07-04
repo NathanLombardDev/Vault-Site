@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vault — Your Gaming Library, Unified</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0b10;
+      color: #f8fafc;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 60px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(0, 240, 255, 0.06) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 70%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 0 40px rgba(0, 240, 255, 0.2), 0 0 80px rgba(139, 92, 246, 0.1);
+      position: relative;
+    }
+
+    h1 {
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #f8fafc 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+      font-size: 20px;
+      color: #94a3b8;
+      max-width: 500px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, #00f0ff 0%, #8b5cf6 100%);
+      color: #0a0b10;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.4), 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .download-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .version {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #475569;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin-top: 80px;
+      position: relative;
+    }
+
+    .feature-card {
+      background: rgba(21, 24, 38, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 28px 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .feature-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #00f0ff;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    .platforms {
+      display: flex;
+      gap: 24px;
+      margin-top: 60px;
+      opacity: 0.6;
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .platforms span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: #475569;
+      font-size: 13px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    footer a {
+      color: #00f0ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <img src="icon.png" alt="Vault" class="logo" />
+    <h1>VAULT</h1>
+    <p class="tagline">Your gaming library, achievements, and playtime — unified across Steam, PlayStation, and Xbox in one desktop app.</p>
+
+    <a id="download-btn" href="#" class="download-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" y1="15" x2="12" y2="3" />
+      </svg>
+      <span id="download-text">Download for Windows</span>
+    </a>
+    <p class="version" id="version-text">Checking latest version...</p>
+
+    <div class="features">
+      <div class="feature-card">
+        <h3>Multi-Platform</h3>
+        <p>Connect Steam, PlayStation Network, and Xbox Live. See everything in one place.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Achievement Tracking</h3>
+        <p>Track your trophy and achievement completion across all platforms with tier-based progress.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Playtime Stats</h3>
+        <p>See total hours played, recently played games, and detailed per-game breakdowns.</p>
+      </div>
+    </div>
+
+    <div class="platforms">
+      <span>🎮 Steam</span>
+      <span>🎮 PlayStation</span>
+      <span>🎮 Xbox</span>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built by <a href="https://github.com/NathanLombardDev">NathanLombardDev</a></p>
+  </footer>
+
+  <script>
+    fetch('https://api.github.com/repos/NathanLombardDev/vault-releases/releases/latest')
+      .then(r => r.json())
+      .then(release => {
+        const setupAsset = release.assets.find(a => a.name.endsWith('.exe') && a.name.includes('Setup'));
+        const btn = document.getElementById('download-btn');
+        const text = document.getElementById('download-text');
+        const version = document.getElementById('version-text');
+
+        if (setupAsset) {
+          btn.href = setupAsset.browser_download_url;
+          text.textContent = `Download Vault ${release.tag_name}`;
+          version.textContent = `${release.tag_name} — Windows 10/11`;
+        } else {
+          text.textContent = 'Download for Windows';
+          version.textContent = 'Latest release available';
+          btn.href = release.html_url;
+        }
+      })
+      .catch(() => {
+        document.getElementById('version-text').textContent = 'Visit GitHub for downloads';
+        document.getElementById('download-btn').href = 'https://github.com/NathanLombardDev/vault-releases/releases/latest';
+      });
+  </script>
+</body>
+</html>
