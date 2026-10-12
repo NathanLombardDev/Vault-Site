@@ -4,245 +4,303 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vault — Your Gaming Library, Unified</title>
-
-  <meta name="google-site-verification" content="ynui_cvezwUug8q-OkvSBzbXtBN1Dx1wOtfZ1jkdikE" />
   
+  <!-- Google Verification -->
+  <meta name="google-site-verification" content="nb3yMIqerQhHMlQplHoKM-nxsQSkaZ259lTIOBKz8V0" />
+
   <!-- SEO -->
-  <meta name="description" content="Vault is a free desktop app that unifies your Steam, PlayStation, and Epic Games libraries. Track achievements, playtime, and stats across all platforms in one place.">
-  <meta name="keywords" content="vault gaming, gaming library manager, steam tracker, playstation trophies tracker, epic games library, achievement tracker, game launcher, playtime tracker, unified gaming hub, PC gaming app">
+  <meta name="description" content="Vault is a free desktop app that unifies your Steam, PlayStation, Xbox, and Epic Games libraries. Track achievements, playtime, stats, emulators, public profiles, and more — all in one place.">
+  <meta name="keywords" content="vault gaming, gaming library manager, steam tracker, playstation trophies tracker, xbox achievements, epic games library, achievement tracker, game launcher, playtime tracker, unified gaming hub, PC gaming app, twitch integration, youtube gaming, discord rich presence, gaming wrapped, gaming stats">
   <meta name="author" content="NathanLombardDev">
   <link rel="canonical" href="https://vault.gamer.free/">
 
   <!-- Open Graph (Facebook, Discord, etc.) -->
   <meta property="og:title" content="Vault — Your Gaming Library, Unified">
-  <meta property="og:description" content="Track your Steam, PlayStation, and Epic Games library, achievements, and playtime in one free desktop app.">
+  <meta property="og:description" content="Track your Steam, PlayStation, Xbox, and Epic Games library, achievements, and playtime in one free desktop app.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nathanlombarddev.github.io/vault-site/">
-  <meta property="og:image" content="https://nathanlombarddev.github.io/vault-site/icon.png">
+  <meta property="og:url" content="https://vault.gamer.free/">
+  <meta property="og:image" content="https://vault.gamer.free/icon.png">
   <meta property="og:site_name" content="Vault">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Vault — Your Gaming Library, Unified">
-  <meta name="twitter:description" content="Steam + PlayStation + Epic in one app. Track achievements, playtime, and gaming stats.">
-  <meta name="twitter:image" content="https://nathanlombarddev.github.io/vault-site/icon.png">
+  <meta name="twitter:description" content="Steam + PlayStation + Xbox + Epic in one app. Track achievements, playtime, streaming stats, and more.">
+  <meta name="twitter:image" content="https://vault.gamer.free/icon.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Vault",
+    "description": "A free Windows app that unifies your Steam, PlayStation, Xbox, Epic Games and emulator libraries with achievement tracking, real playtime, stats, public profiles and Twitch/YouTube integration.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Windows",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "NathanLombardDev" },
+    "url": "https://vault.gamer.free/"
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="icon.png">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0a0b10;
-      color: #f8fafc;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 60px 24px;
-      text-align: center;
-      position: relative;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(ellipse at 50% 30%, rgba(0, 240, 255, 0.06) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 70%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .logo {
-      width: 120px;
-      height: 120px;
-      border-radius: 24px;
-      margin-bottom: 32px;
-      box-shadow: 0 0 40px rgba(0, 240, 255, 0.2), 0 0 80px rgba(139, 92, 246, 0.1);
-      position: relative;
-    }
-
-    h1 {
-      font-size: 56px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, #f8fafc 0%, #94a3b8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .tagline {
-      font-size: 20px;
-      color: #94a3b8;
-      max-width: 500px;
-      line-height: 1.6;
-      margin-bottom: 48px;
-    }
-
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px 36px;
-      background: linear-gradient(135deg, #00f0ff 0%, #8b5cf6 100%);
-      color: #0a0b10;
-      font-size: 16px;
-      font-weight: 700;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
-    }
-
-    .download-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.4), 0 8px 32px rgba(0, 0, 0, 0.4);
-    }
-
-    .download-btn svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .version {
-      margin-top: 16px;
-      font-size: 13px;
-      color: #475569;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      max-width: 900px;
-      margin-top: 80px;
-      position: relative;
-    }
-
-    .feature-card {
-      background: rgba(21, 24, 38, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 12px;
-      padding: 28px 24px;
-      backdrop-filter: blur(12px);
-    }
-
-    .feature-card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #00f0ff;
-    }
-
-    .feature-card p {
-      font-size: 14px;
-      color: #94a3b8;
-      line-height: 1.5;
-    }
-
-    .platforms {
-      display: flex;
-      gap: 24px;
-      margin-top: 60px;
-      opacity: 0.6;
-      font-size: 14px;
-      color: #64748b;
-    }
-
-    .platforms span {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 32px;
-      color: #475569;
-      font-size: 13px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    footer a {
-      color: #00f0ff;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <section class="hero">
-    <img src="icon.png" alt="Vault" class="logo" />
-    <h1>VAULT</h1>
-    <p class="tagline">Your gaming library, achievements, and playtime — unified across Steam, PlayStation, and Xbox in one desktop app.</p>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h12M9 12h12M9 18h12M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2z"/></symbol>
+    <symbol id="i-dice" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r=".8"/><circle cx="15.5" cy="15.5" r=".8"/><circle cx="12" cy="12" r=".8"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="8" cy="8" r="1.5"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.4 3.4-5.5 6.5-5.5s5.7 2.1 6.5 5.5M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.8c1.8.8 3 2.6 3.5 5.2"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-swords" viewBox="0 0 24 24"><path d="M14.5 17.5L3 6V3h3l11.5 11.5M13 19l6-6M16 16l4 4M19 21l2-2M9.5 6.5L21 18v3h-3l-1-1"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M6 16c.6-1.6 1.8-2.4 3-2.4s2.4.8 3 2.4M15 9h3M15 13h3"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 1.5-.8 1.5-1.5 0-1.5-1-1.7-1-3 0-1 .8-1.5 1.8-1.5H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.2M3 12A9 9 0 0 1 18.5 5.8M18 2v4h-4M6 22v-4h4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></symbol>
+  </svg>
 
-    <a id="download-btn" href="#" class="download-btn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-        <polyline points="7 10 12 15 17 10" />
-        <line x1="12" y1="15" x2="12" y2="3" />
-      </svg>
-      <span id="download-text">Download for Windows</span>
-    </a>
-    <p class="version" id="version-text">Checking latest version...</p>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="icon.png" alt=""><span>VAUL<b>T</b></span></a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#features">Features</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-play js-download" href="https://github.com/NathanLombardDev/vault-releases/releases/latest">Download</a>
+    </div>
+  </header>
 
-    <div class="features">
-      <div class="feature-card">
-        <h3>Multi-Platform</h3>
-        <p>Connect Steam, PlayStation Network, and Xbox Live. See everything in one place.</p>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Free for Windows 10 &amp; 11</span>
+        <h1>Every game you own. One vault.</h1>
+        <p class="lead">Vault brings your Steam, PlayStation, Xbox and Epic libraries, plus your emulators, into one console-style app. Real playtime, every trophy, and a straight answer to "what should I play next?"</p>
+        <div class="actions">
+          <a class="btn btn-play js-download" href="https://github.com/NathanLombardDev/vault-releases/releases/latest">
+            <svg class="icon"><use href="#i-download"/></svg><span class="js-download-text">Download for Windows</span>
+          </a>
+          <a class="btn btn-ghost" href="#features">See features</a>
+        </div>
+        <p class="version" id="version-text">Checking latest version…</p>
+
+        <div class="plats" aria-label="Supported platforms">
+          <span class="plat"><img src="platforms/steam.svg" alt="">Steam</span>
+          <span class="plat"><img src="platforms/playstation.svg" alt="">PlayStation</span>
+          <span class="plat"><img src="platforms/xbox.svg" alt="">Xbox</span>
+          <span class="plat"><img src="platforms/epic.svg" alt="">Epic Games</span>
+          <span class="plat"><img src="platforms/rpcs3.svg" alt="">RPCS3</span>
+          <span class="plat"><img src="platforms/shadps4.png" alt="">shadPS4</span>
+        </div>
       </div>
-      <div class="feature-card">
-        <h3>Achievement Tracking</h3>
-        <p>Track your trophy and achievement completion across all platforms with tier-based progress.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Playtime Stats</h3>
-        <p>See total hours played, recently played games, and detailed per-game breakdowns.</p>
+    </section>
+
+    <div class="wrap">
+      <div class="stats">
+        <div><b>6</b><span>Platforms</span></div>
+        <div><b>13</b><span>Themes</span></div>
+        <div><b>0</b><span>Trackers</span></div>
+        <div><b>$0</b><span>Forever free</span></div>
       </div>
     </div>
 
-    <div class="platforms">
-      <span>🎮 Steam</span>
-      <span>🎮 PlayStation</span>
-      <span>🎮 Xbox</span>
-    </div>
-  </section>
+    <section id="features">
+      <div class="wrap">
+        <div class="sec-h">
+          <span class="label">Your library</span>
+          <h2>One place for all of it</h2>
+          <p>Stop jumping between launchers. Vault syncs your accounts and shows everything in one fast, art-first interface.</p>
+        </div>
+        <div class="grid">
+          <div class="card"><svg class="icon"><use href="#i-grid"/></svg><h3>Unified library</h3><p>Every game from every platform on cover-art shelves. Search, filter by platform, sort by playtime or last played.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-trophy"/></svg><h3>Trophies &amp; achievements</h3><p>A platinum-to-iron tier grid across all platforms, with global rarity so you can see which unlocks really count.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-clock"/></svg><h3>Real playtime</h3><p>Vault notices when a game is actually running and logs the session, so your hours are right even where platforms don't report them.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-chart"/></svg><h3>Stats</h3><p>Platform split, completion rate, most-played games, weekly activity, streaks and your shelf of shame.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-calendar"/></svg><h3>Gaming Wrapped</h3><p>Your year in review: total hours, top games, busiest month, longest session and new games started.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-list"/></svg><h3>Backlog</h3><p>Mark games as playing, backlog, completed, abandoned or wishlist, with a time-to-beat estimate for each.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-h">
+          <span class="label">What next</span>
+          <h2>Decide what to play</h2>
+          <p>Vault looks at what you own and how you play, then helps you pick.</p>
+        </div>
+        <div class="big">
+          <div class="card"><svg class="icon"><use href="#i-spark"/></svg><h3>Play Next</h3><p>Picks sorted into shelves like "Almost there" for games close to 100%, "Forgotten gems" you haven't touched in months, and "Quick session" for short evenings.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-dice"/></svg><h3>Game Roulette</h3><p>Still can't choose? Spin the wheel, filtered by platform, console, installed or never played.</p></div>
+        </div>
+        <div class="grid g4" style="margin-top:16px">
+          <div class="card"><svg class="icon"><use href="#i-tag"/></svg><h3>Store &amp; deals</h3><p>Trending and upcoming releases, plus current deals, without leaving the app.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-layers"/></svg><h3>Library value</h3><p>What your collection cost at full price, and what it's worth today.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-note"/></svg><h3>Notes &amp; collections</h3><p>Keep notes on where you left off, and sort games into your own collections.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-map"/></svg><h3>Interactive maps</h3><p>Open a game's interactive map in one click, when one exists.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-h">
+          <span class="label">While you play</span>
+          <h2>Always in the loop</h2>
+        </div>
+        <div class="grid">
+          <div class="card"><svg class="icon"><use href="#i-play"/></svg><h3>Now Playing</h3><p>The game you're in takes over the home screen, with live session time and progress.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-bell"/></svg><h3>Unlock popups</h3><p>Steam-style popups for every new achievement, plus milestone alerts at 25, 50, 75 and 100%.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-chat"/></svg><h3>Discord Rich Presence</h3><p>Your Discord status shows the game, hours played and platform automatically.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-music"/></svg><h3>Spotify controls</h3><p>See and control what's playing from the dashboard.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-cpu"/></svg><h3>System monitor</h3><p>Live CPU, GPU and memory use, so you can see what's slowing a game down.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-palette"/></svg><h3>13 themes</h3><p>Pick a theme, or let Vault tint the whole interface from the art of the game you're looking at.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-h">
+          <span class="label">Social</span>
+          <h2>Show it off</h2>
+          <p>Everything social is opt-in. Nothing is public until you claim a handle.</p>
+        </div>
+        <div class="grid g4">
+          <div class="card"><svg class="icon"><use href="#i-globe"/></svg><h3>Public profile</h3><p>A web page at your own handle with your library, trophy case and recent unlocks. You choose which sections to show.</p><span class="meta">Opt-in</span></div>
+          <div class="card"><svg class="icon"><use href="#i-users"/></svg><h3>Follow friends</h3><p>Follow other Vault players and get a popup when they unlock something.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-swords"/></svg><h3>Rivalry</h3><p>Compare libraries with a friend: shared games, hours and a rivalry score.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-card"/></svg><h3>Profile card</h3><p>A shareable image of your gamertag, hours, platform split and top games.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-h">
+          <span class="label">For creators</span>
+          <h2>Built in for streamers</h2>
+        </div>
+        <div class="grid">
+          <div class="card"><img class="icon" src="platforms/twitch.svg" alt="" style="margin-bottom:18px"><h3>Twitch</h3><p>Channel stats, live followed channels, clips, VODs, your schedule, and live viewer counts for games in your library.</p></div>
+          <div class="card"><img class="icon" src="platforms/youtube.svg" alt="" style="margin-bottom:18px"><h3>YouTube</h3><p>Subscribers, recent uploads, video performance and live stream stats for your channel.</p></div>
+          <div class="card"><svg class="icon"><use href="#i-video"/></svg><h3>OBS overlay</h3><p>A browser source for OBS or Streamlabs that shows your current game, playtime and unlock popups on stream.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="platforms">
+      <div class="wrap">
+        <div class="sec-h">
+          <span class="label">Platforms</span>
+          <h2>Connect once, sync automatically</h2>
+        </div>
+        <div class="grid">
+          <div class="card plat-card" style="--c:var(--plat-steam)"><div class="head"><img src="platforms/steam.svg" alt=""><h3>Steam</h3></div><p>Steam sign-in. Library, playtime, achievements with global rarity, installed games and Family Sharing.</p></div>
+          <div class="card plat-card" style="--c:var(--plat-playstation)"><div class="head"><img src="platforms/playstation.svg" alt=""><h3>PlayStation</h3></div><p>PS5, PS4 and PS3 games, trophies and playtime from your PSN account.</p></div>
+          <div class="card plat-card" style="--c:var(--plat-xbox)"><div class="head"><img src="platforms/xbox.svg" alt=""><h3>Xbox</h3></div><p>Microsoft sign-in. Games, achievements with rarity, gamerscore and playtime.</p></div>
+          <div class="card plat-card" style="--c:var(--plat-epic)"><div class="head"><img src="platforms/epic.svg" alt=""><h3>Epic Games</h3></div><p>Epic sign-in. Library, playtime, and achievements with rarity.</p></div>
+          <div class="card plat-card" style="--c:var(--plat-rpcs3)"><div class="head"><img src="platforms/rpcs3.svg" alt=""><h3>RPCS3</h3></div><p>Scans your PS3 emulator for installed games, trophies and playtime.</p></div>
+          <div class="card plat-card" style="--c:var(--plat-shadps4)"><div class="head"><img src="platforms/shadps4.png" alt=""><h3>shadPS4</h3></div><p>Scans your PS4 emulator for installed games, playtime and trophies.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="wrap privacy">
+        <div class="sec-h" style="margin:0">
+          <span class="label">Privacy</span>
+          <h2>Your data stays on your PC</h2>
+          <p>Vault has no analytics and no ads. Your library, playtime and sign-ins live on your computer. Read the full <a href="privacy.html" style="color:var(--tint)">privacy policy</a>.</p>
+        </div>
+        <ul class="checks">
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Encrypted sign-ins.</b> Platform tokens are locked with Windows' secure storage and only sent to the platform they belong to.</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>No tracking.</b> No analytics, telemetry or advertising code. Nothing to opt out of.</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Public only if you say so.</b> Profiles are off by default and can be deleted in one click.</span></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><span><b>Backups you own.</b> Export your notes, backlog and settings to a file, and restore them any time.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="sec-h">
+          <span class="label">FAQ</span>
+          <h2>Questions</h2>
+        </div>
+        <div class="faq">
+          <details><summary>Is Vault really free?</summary><p>Yes. There are no ads, subscriptions or paid tiers.</p></details>
+          <details><summary>What do I need to run it?</summary><p>Windows 10 or 11. macOS and Linux aren't supported yet.</p></details>
+          <details><summary>Is it safe to connect my accounts?</summary><p>Steam, Xbox, Epic, Twitch, YouTube and Spotify use their official sign-in pages, so Vault never sees your password. PlayStation uses a session token you paste in. All tokens are stored encrypted on your PC and only sent to the platform they belong to.</p></details>
+          <details><summary>Does Vault replace my launchers?</summary><p>No. Vault starts games through the platform they belong to, so Steam, Epic and the others still need to be installed for their games.</p></details>
+          <details><summary>Why is my playtime different from the platform's?</summary><p>Some platforms don't report playtime, or report it late. Vault adds the sessions it tracks itself, so its total can be more accurate. It can also differ for games played on other devices.</p></details>
+          <details><summary>How do I delete my public profile?</summary><p>Open Profile in Vault and choose Delete profile. It's removed from our server straight away.</p></details>
+          <details><summary>Is Vault affiliated with Sony, Microsoft, Valve or Epic?</summary><p>No. Vault is an independent project and isn't endorsed by any platform.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <h2>Bring your games home.</h2>
+        <p>Free, private, and built for people who play everywhere.</p>
+        <div class="actions">
+          <a class="btn btn-play js-download" href="https://github.com/NathanLombardDev/vault-releases/releases/latest">
+            <svg class="icon"><use href="#i-download"/></svg><span class="js-download-text">Download for Windows</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>Built by <a href="https://github.com/NathanLombardDev">NathanLombardDev</a></p>
+    <div class="wrap">
+      <a class="brand" href="./"><img src="icon.png" alt=""><span>VAUL<b>T</b></span></a>
+      <nav aria-label="Footer">
+        <a href="https://github.com/NathanLombardDev/vault-releases/releases" target="_blank" rel="noopener">Releases</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/NathanLombardDev" target="_blank" rel="noopener">NathanLombardDev</a>
+      </nav>
+      <p class="fine">Vault is not affiliated with or endorsed by Valve, Sony Interactive Entertainment, Microsoft, Epic Games, Twitch, Google, Spotify or Discord. All trademarks and game art belong to their owners.</p>
+    </div>
   </footer>
 
   <script>
     fetch('https://api.github.com/repos/NathanLombardDev/vault-releases/releases/latest')
       .then(r => r.json())
       .then(release => {
-        const setupAsset = release.assets.find(a => a.name.endsWith('.exe') && a.name.includes('Setup'));
-        const btn = document.getElementById('download-btn');
-        const text = document.getElementById('download-text');
-        const version = document.getElementById('version-text');
-
-        if (setupAsset) {
-          btn.href = setupAsset.browser_download_url;
-          text.textContent = `Download Vault ${release.tag_name}`;
-          version.textContent = `${release.tag_name} — Windows 10/11`;
-        } else {
-          text.textContent = 'Download for Windows';
-          version.textContent = 'Latest release available';
-          btn.href = release.html_url;
-        }
+        const setup = (release.assets || []).find(a => a.name.endsWith('.exe') && a.name.includes('Setup'));
+        const href = setup ? setup.browser_download_url : release.html_url;
+        document.querySelectorAll('.js-download').forEach(a => { a.href = href; });
+        if (setup) document.querySelectorAll('.js-download-text').forEach(s => { s.textContent = 'Download Vault ' + release.tag_name; });
+        document.getElementById('version-text').textContent = release.tag_name + ' · Windows 10/11';
       })
       .catch(() => {
-        document.getElementById('version-text').textContent = 'Visit GitHub for downloads';
-        document.getElementById('download-btn').href = 'https://github.com/NathanLombardDev/vault-releases/releases/latest';
+        document.getElementById('version-text').textContent = 'Windows 10/11 · see GitHub for releases';
       });
   </script>
 </body>
