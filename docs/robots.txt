@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vault.gamer.free/sitemap.xml
+Sitemap: https://nathanlombarddev.github.io/Vault-Site/sitemap.xml
